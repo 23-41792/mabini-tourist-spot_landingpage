@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Mabini, Batangas – Beaches, Diving, Hiking & Food</title>
+  <meta name="description" content="Plan your trip to Mabini, Batangas and explore world-class diving spots, pristine beaches, mountain treks, and local delicacies.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Colors */
+      --color-primary: #004E64;
+      --color-primary-hover: #003a4d;
+      --color-secondary: #4CB8A4;
+      --color-secondary-hover: #3a9b8a;
+      --color-tertiary: #FF6B6B;
+      --color-tertiary-hover: #e55a5a;
+      --color-neutral: #F9E4C9;
+      --color-success: #2E7D32;
+      --color-warning: #E65100;
+      --color-text: #2A2A2A;
+      --color-text-inverse: #FFFFFF;
+      --color-text-muted: #6B7280;
+      --color-background: #F9FAFB;
+      --color-background-dark: #111827;
+      --color-gray-50: #F9FAFB;
+      --color-gray-100: #F3F4F6;
+      --color-gray-200: #E5E7EB;
+      --color-gray-300: #D1D5DB;
+      --color-gray-400: #9CA3AF;
+      --color-gray-500: #6B7280;
+      --color-gray-600: #4B5563;
+      --color-gray-700: #374151;
+      --color-gray-800: #1F2937;
+      --color-gray-900: #111827;
+      --gradient-1: linear-gradient(135deg, #004E64 0%, #4CB8A4 100%);
+      --gradient-2: linear-gradient(135deg, #FF6B6B 0%, #FF9472 100%);
+      --gradient-overlay: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+      --font-family-primary: "Poppins", sans-serif;
+      --font-family-body: "Lato", sans-serif;
+      --font-size-xs: 0.75rem;
+      --font-size-sm: 0.875rem;
+      --font-size-base: 1rem;
+      --font-size-lg: 1.125rem;
+      --font-size-xl: 1.25rem;
+      --font-size-2xl: 1.5rem;
+      --font-size-3xl: 1.875rem;
+      --font-size-4xl: 2.25rem;
+      --font-size-5xl: 3rem;
+      --font-weight-light: 300;
+      --font-weight-normal: 400;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      --spacing-1: 0.25rem;
+      --spacing-2: 0.5rem;
+      --spacing-3: 0.75rem;
+      --spacing-4: 1rem;
+      --spacing-6: 1.5rem;
+      --spacing-8: 2rem;
+      --spacing-12: 3rem;
+      --spacing-16: 4rem;
+      --spacing-20: 5rem;
+      --spacing-24: 6rem;
+      --spacing-32: 8rem;
+      --spacing-64: 16rem;
+      --radius-sm: 0.25rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    * { box-sizing: border-box; }
+    html { background-color: var(--color-background); color: var(--color-text); }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family-body);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+      background-color: var(--color-background);
+      color: var(--color-text);
+    }
+    .nav-link:hover { color: var(--color-secondary) !important; }
+    .nav-link.active { color: var(--color-secondary) !important; }
+    .btn-primary:hover { background-color: var(--color-tertiary-hover) !important; }
+    .btn-secondary:hover { background-color: var(--color-secondary-hover) !important; }
+    .attraction-card:hover { transform: scale(1.02); }
+    @keyframes aurora {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .aurora-text {
+      background: linear-gradient(-45deg, var(--color-tertiary), var(--color-secondary), var(--color-primary), var(--color-tertiary));
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: aurora 3s ease-in-out infinite;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--color-primary);
+      z-index: 1000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .mobile-menu.active { display: flex; }
+    .carousel-container { position: relative; overflow: hidden; }
+    .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+    .carousel-slide { min-width: 100%; flex-shrink: 0; }
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-lg);
+      color: var(--color-primary);
+      transition: background-color 0.3s ease;
+    }
+    .carousel-nav:hover { background-color: rgba(255, 255, 255, 1); }
+    .carousel-nav.prev { left: var(--spacing-4); }
+    .carousel-nav.next { right: var(--spacing-4); }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-2);
+      margin-top: var(--spacing-6);
+    }
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--color-gray-300);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .carousel-dot.active { background-color: var(--color-primary); }
+    @media (max-width: 768px) {
+      .desktop-nav { display: none; }
+      .mobile-nav-toggle { display: block !important; }
+      .hero h1 { font-size: var(--font-size-3xl) !important; }
+      .hero h2 { font-size: var(--font-size-xl) !important; }
+      .attractions-grid { grid-template-columns: 1fr !important; }
+      .carousel-nav { display: none; }
+    }
+    @media (min-width: 769px) {
+      .mobile-nav-toggle { display: none; }
+    }
+    /* Login Modal Styles */
+    .modal-bg {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-bg.active { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: var(--spacing-8);
+      max-width: 350px;
+      width: 90vw;
+      text-align: center;
+      font-family: var(--font-family-primary);
+    }
+    .modal input[type="text"], .modal input[type="password"] {
+      width: 100%;
+      padding: var(--spacing-3);
+      margin-bottom: var(--spacing-4);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-gray-300);
+      font-size: var(--font-size-base);
+    }
+    .modal button {
+      margin-top: var(--spacing-2);
+      padding: var(--spacing-3) var(--spacing-6);
+      border-radius: var(--radius-md);
+      border: none;
+      font-size: var(--font-size-base);
+      font-family: var(--font-family-primary);
+      cursor: pointer;
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      transition: background 0.2s;
+    }
+    .modal button:hover { background: var(--color-primary-hover); }
+    .modal .close-btn {
+      background: none;
+      color: var(--color-gray-500);
+      font-size: var(--font-size-2xl);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      border: none;
+      cursor: pointer;
+    }
+    .modal-confirm {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: var(--spacing-8);
+      max-width: 350px;
+      width: 90vw;
+      text-align: center;
+      font-family: var(--font-family-primary);
+    }
+    .modal-confirm button {
+      margin: var(--spacing-2);
+      padding: var(--spacing-3) var(--spacing-6);
+      border-radius: var(--radius-md);
+      border: none;
+      font-size: var(--font-size-base);
+      font-family: var(--font-family-primary);
+      cursor: pointer;
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      transition: background 0.2s;
+    }
+    .modal-confirm button:hover { background: var(--color-primary-hover); }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 100; background-color: var(--color-primary); padding: var(--spacing-4) var(--spacing-8); display: flex; justify-content: space-between; align-items: center; min-height: 64px;">
+    <div style="font-family: var(--font-family-primary); font-weight: var(--font-weight-bold); font-size: var(--font-size-xl); color: var(--color-text-inverse);">
+      Mabini Tourism
+    </div>
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" style="display: flex; gap: var(--spacing-8);">
+      <a href="#hero" class="nav-link active" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-primary); font-weight: var(--font-weight-normal); padding: var(--spacing-3); transition: color 0.3s ease; cursor: pointer;">Home</a>
+      <a href="#attractions" class="nav-link" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-primary); font-weight: var(--font-weight-normal); padding: var(--spacing-3); transition: color 0.3s ease; cursor: pointer;">Attractions</a>
+      <a href="#visit" class="nav-link" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-primary); font-weight: var(--font-weight-normal); padding: var(--spacing-3); transition: color 0.3s ease; cursor: pointer;">Plan Visit</a>
+      <a href="#contact" class="nav-link" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-primary); font-weight: var(--font-weight-normal); padding: var(--spacing-3); transition: color 0.3s ease; cursor: pointer;">Contact</a>
+      <button id="loginBtn" style="margin-left: var(--spacing-8); background: var(--color-secondary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--spacing-2) var(--spacing-6); font-family: var(--font-family-primary); font-size: var(--font-size-base); cursor: pointer; transition: background 0.2s;">Log In</button>
+      <button id="logoutBtn" style="margin-left: var(--spacing-2); background: var(--color-tertiary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--spacing-2) var(--spacing-6); font-family: var(--font-family-primary); font-size: var(--font-size-base); cursor: pointer; display: none; transition: background 0.2s;">Log Out</button>
+    </nav>
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-nav-toggle" style="display: none; background: none; border: none; color: var(--color-text-inverse); font-size: var(--font-size-2xl); cursor: pointer; padding: var(--spacing-2);" onclick="toggleMobileMenu()">
+      ☰
+    </button>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button style="position: absolute; top: var(--spacing-6); right: var(--spacing-6); background: none; border: none; color: var(--color-text-inverse); font-size: var(--font-size-2xl); cursor: pointer;" onclick="toggleMobileMenu()">×</button>
+    <nav style="display: flex; flex-direction: column; gap: var(--spacing-8); text-align: center;">
+      <a href="#hero" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-normal);" onclick="toggleMobileMenu()">Home</a>
+      <a href="#attractions" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-normal);" onclick="toggleMobileMenu()">Attractions</a>
+      <a href="#visit" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-normal);" onclick="toggleMobileMenu()">Plan Visit</a>
+      <a href="#contact" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-normal);" onclick="toggleMobileMenu()">Contact</a>
+      <button id="loginBtnMobile" style="margin: var(--spacing-4) auto 0 auto; background: var(--color-secondary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--spacing-2) var(--spacing-6); font-family: var(--font-family-primary); font-size: var(--font-size-base); cursor: pointer; transition: background 0.2s;">Log In</button>
+      <button id="logoutBtnMobile" style="margin: var(--spacing-2) auto 0 auto; background: var(--color-tertiary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--spacing-2) var(--spacing-6); font-family: var(--font-family-primary); font-size: var(--font-size-base); cursor: pointer; display: none; transition: background 0.2s;">Log Out</button>
+    </nav>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal-bg" id="loginModalBg">
+    <div class="modal" style="position: relative;">
+      <button class="close-btn" onclick="closeLoginModal()" aria-label="Close">&times;</button>
+      <h2 style="margin-bottom: var(--spacing-6); color: var(--color-primary);">Log In</h2>
+      <input type="text" id="username" placeholder="Username" autocomplete="username" />
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" />
+      <button onclick="login()">Log In</button>
+    </div>
+  </div>
+  <!-- Logout Confirmation Modal -->
+  <div class="modal-bg" id="logoutModalBg">
+    <div class="modal-confirm">
+      <h2 style="margin-bottom: var(--spacing-6); color: var(--color-primary);">Log Out</h2>
+      <p style="margin-bottom: var(--spacing-6); color: var(--color-text);">Are you sure you want to log out?</p>
+      <button onclick="confirmLogout()">Yes, Log Out</button>
+      <button onclick="closeLogoutModal()" style="background: var(--color-gray-300); color: var(--color-text);">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;">
+    <div style="position: relative; width: 100%; height: 100%;">
+      <video
+        aria-label="ocean diving"
+        src="https://c.animaapp.com/mfm9g0h3xkyMwm/img/ai_1.mp4"
+        poster="https://c.animaapp.com/mfm9g0h3xkyMwm/img/ai_1-poster.png"
+        style="width: 100%; height: 100%; object-fit: cover;"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+      <div style="pointer-events: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"></div>
+    </div>
+    <div style="position: absolute; z-index: 10; max-width: 800px; padding: var(--spacing-8);">
+      <h1 style="font-family: var(--font-family-primary); font-size: var(--font-size-5xl); font-weight: var(--font-weight-bold); margin: 0 0 var(--spacing-6) 0; color: var(--color-text-inverse); line-height: 1.2;">
+        Discover <span class="aurora-text">Mabini</span>, Batangas
+      </h1>
+      <h2 style="font-family: var(--font-family-body); font-size: var(--font-size-2xl); font-weight: var(--font-weight-light); margin: 0 0 var(--spacing-12) 0; color: var(--color-text-inverse); line-height: 1.4;">
+        Diving, Hiking, Beaches & Local Delicacies
+      </h2>
+      <button class="btn-primary" style="background-color: var(--color-tertiary); color: var(--color-text-inverse); border: none; padding: var(--spacing-4) var(--spacing-8); border-radius: var(--radius-md); font-family: var(--font-family-primary); font-size: var(--font-size-base); font-weight: var(--font-weight-normal); cursor: pointer; transition: background-color 0.3s ease;" onclick="document.getElementById('visit').scrollIntoView({behavior: 'smooth'})">
+        Plan Your Visit
+      </button>
+    </div>
+  </section>
+
+  <!-- Featured Attractions Carousel -->
+  <section id="attractions" style="padding: var(--spacing-20) var(--spacing-8); background-color: var(--color-background);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <h2 style="font-family: var(--font-family-primary); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); text-align: center; margin: 0 0 var(--spacing-16) 0; color: var(--color-text);">
+        Featured Attractions
+      </h2>
+      <div class="carousel-container" style="position: relative; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg);">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Slide 1: Ocean Diving -->
+          <div class="carousel-slide" style="position: relative; height: 500px;">
+            <img src="assets/worldclass.jpg" alt="diving boat" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: var(--spacing-12) var(--spacing-8) var(--spacing-8) var(--spacing-8);">
+              <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin: 0 0 var(--spacing-4) 0; color: var(--color-text-inverse);">
+                World-Class Diving Spots
+              </h3>
+              <p style="font-family: var(--font-family-body); font-size: var(--font-size-lg); margin: 0; color: var(--color-text-inverse); line-height: 1.6;">
+                Explore the underwater paradise of Mabini with its rich marine biodiversity, coral gardens, and crystal-clear waters perfect for both beginners and experienced divers.
+              </p>
+            </div>
+          </div>
+          <!-- Slide 2: Dive Resorts -->
+          <div class="carousel-slide" style="position: relative; height: 500px;">
+            <img src="assets/premium.webp" alt="dive resort" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: var(--spacing-12) var(--spacing-8) var(--spacing-8) var(--spacing-8);">
+              <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin: 0 0 var(--spacing-4) 0; color: var(--color-text-inverse);">
+                Premium Dive Resorts
+              </h3>
+              <p style="font-family: var(--font-family-body); font-size: var(--font-size-lg); margin: 0; color: var(--color-text-inverse); line-height: 1.6;">
+                Stay at world-class dive resorts offering PADI certification courses, equipment rental, and guided underwater adventures in Anilao's pristine waters.
+              </p>
+            </div>
+          </div>
+          <!-- Slide 3: Mt. Gulugod Baboy -->
+          <div class="carousel-slide" style="position: relative; height: 500px;">
+            <img src="assets/gulugodtreck.jpg" alt="Mt. Gulugod Baboy trek" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: var(--spacing-12) var(--spacing-8) var(--spacing-8) var(--spacing-8);">
+              <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin: 0 0 var(--spacing-4) 0; color: var(--color-text-inverse);">
+                Mt. Gulugod Baboy Trek
+              </h3>
+              <p style="font-family: var(--font-family-body); font-size: var(--font-size-lg); margin: 0; color: var(--color-text-inverse); line-height: 1.6;">
+                Conquer the scenic trails of Mt. Gulugod Baboy and witness panoramic views of Batangas coastline, Taal Lake, and the surrounding mountain ranges.
+              </p>
+            </div>
+          </div>
+          <!-- Slide 4: Camp Netanya -->
+          <div class="carousel-slide" style="position: relative; height: 500px;">
+            <img src="assets/campnetanya.jpg" alt="Camp Netanya" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); padding: var(--spacing-12) var(--spacing-8) var(--spacing-8) var(--spacing-8);">
+              <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin: 0 0 var(--spacing-4) 0; color: var(--color-text-inverse);">
+                Camp Netanya Resort & Spa
+              </h3>
+              <p style="font-family: var(--font-family-body); font-size: var(--font-size-lg); margin: 0; color: var(--color-text-inverse); line-height: 1.6;">
+                Experience Santorini-inspired luxury, infinity pools, and stunning sea views at Camp Netanya Resort & Spa in Mabini.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Navigation -->
+        <button class="carousel-nav prev" onclick="previousSlide()" aria-label="Previous slide">‹</button>
+        <button class="carousel-nav next" onclick="nextSlide()" aria-label="Next slide">›</button>
+      </div>
+      <!-- Carousel Dots -->
+      <div class="carousel-dots">
+        <button class="carousel-dot active" onclick="goToSlide(0)" aria-label="Go to slide 1"></button>
+        <button class="carousel-dot" onclick="goToSlide(1)" aria-label="Go to slide 2"></button>
+        <button class="carousel-dot" onclick="goToSlide(2)" aria-label="Go to slide 3"></button>
+        <button class="carousel-dot" onclick="goToSlide(3)" aria-label="Go to slide 4"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Grid -->
+  <section style="padding: var(--spacing-20) var(--spacing-8); background-color: var(--color-neutral);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <h2 style="font-family: var(--font-family-primary); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); text-align: center; margin: 0 0 var(--spacing-16) 0; color: var(--color-text);">
+        More Attractions
+      </h2>
+      <div class="attractions-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-8);">
+        <!-- Card 1: Anilao Diving -->
+        <div class="attraction-card" style="background-color: var(--color-text-inverse); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease;">
+          <img src="assets/anilaodiving.jpg" alt="Anilao diving" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin: 0 0 var(--spacing-3) 0; color: var(--color-text);">
+              Anilao Diving Capital
+            </h3>
+            <p style="font-family: var(--font-family-body); font-size: var(--font-size-base); margin: 0; color: var(--color-text-muted); line-height: 1.6;">
+              Discover the underwater wonders of Anilao, known as the birthplace of scuba diving in the Philippines with over 40 dive sites.
+            </p>
+          </div>
+        </div>
+        <!-- Card 2: Underwater Photography -->
+        <div class="attraction-card" style="background-color: var(--color-text-inverse); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease;">
+          <img src="assets/underwater.jpg" alt="Underwater Photography" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin: 0 0 var(--spacing-3) 0; color: var(--color-text);">
+              Underwater Photography
+            </h3>
+            <p style="font-family: var(--font-family-body); font-size: var(--font-size-base); margin: 0; color: var(--color-text-muted); line-height: 1.6;">
+              Capture stunning underwater moments with macro photography of nudibranchs, coral formations, and marine life unique to Anilao waters.
+            </p>
+          </div>
+        </div>
+        <!-- Card 3: Monte Carlo Resort -->
+        <div class="attraction-card" style="background-color: var(--color-text-inverse); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease;">
+          <img src="assets/montecarlo.jpg" alt="Monte Carlo Resort" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin: 0 0 var(--spacing-3) 0; color: var(--color-text);">
+              Monte Carlo Resort
+            </h3>
+            <p style="font-family: var(--font-family-body); font-size: var(--font-size-base); margin: 0; color: var(--color-text-muted); line-height: 1.6;">
+              Experience luxury accommodations with stunning ocean views, infinity pools, and world-class amenities at Monte Carlo Resort in Mabini.
+            </p>
+          </div>
+        </div>
+        <!-- Card 4: Batangas Lomi -->
+        <div class="attraction-card" style="background-color: var(--color-text-inverse); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease;">
+          <img src="assets/lomi.jpg" alt="Batangas Lomi" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin: 0 0 var(--spacing-3) 0; color: var(--color-text);">
+              Batangas Lomi & Seafood
+            </h3>
+            <p style="font-family: var(--font-family-body); font-size: var(--font-size-base); margin: 0; color: var(--color-text-muted); line-height: 1.6;">
+              Taste authentic Batangas lomi, fresh seafood, and local delicacies at seaside restaurants and local eateries.
+            </p>
+          </div>
+        </div>
+        <!-- Card 5: Sea's Spring Resort -->
+        <div class="attraction-card" style="background-color: var(--color-text-inverse); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease;">
+          <img src="assets/seaspring.jpg" alt="Sea's Spring Resort" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin: 0 0 var(--spacing-3) 0; color: var(--color-text);">
+              Sea's Spring Resort
+            </h3>
+            <p style="font-family: var(--font-family-body); font-size: var(--font-size-base); margin: 0; color: var(--color-text-muted); line-height: 1.6;">
+              Relax at Sea's Spring Resort featuring natural spring pools, beachfront accommodations, and serene coastal views perfect for a peaceful getaway.
+            </p>
+          </div>
+        </div>
+        <!-- Card 6: Scuba Diving Courses -->
+        <div class="attraction-card" style="background-color: var(--color-text-inverse); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease;">
+          <img src="assets/scuba.jpg" alt="Scuba Diving Courses" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin: 0 0 var(--spacing-3) 0; color: var(--color-text);">
+              Scuba Diving Courses
+            </h3>
+            <p style="font-family: var(--font-family-body); font-size: var(--font-size-base); margin: 0; color: var(--color-text-muted); line-height: 1.6;">
+              Learn to dive with certified PADI instructors offering Open Water, Advanced, and specialty courses in Anilao's calm, clear waters.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan Your Visit CTA -->
+  <section id="visit" style="padding: var(--spacing-20) var(--spacing-8); background: var(--gradient-1); text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="font-family: var(--font-family-primary); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin: 0 0 var(--spacing-6) 0; color: var(--color-text-inverse);">
+        Ready to Explore Mabini?
+      </h2>
+      <p style="font-family: var(--font-family-body); font-size: var(--font-size-xl); margin: 0 0 var(--spacing-12) 0; color: var(--color-text-inverse); line-height: 1.6;">
+        Start planning your adventure to Mabini, Batangas today. From diving and hiking to beaches and local cuisine, create memories that will last a lifetime.
+      </p>
+      <div style="display: flex; gap: var(--spacing-4); justify-content: center; flex-wrap: wrap;">
+        <button class="btn-primary" style="background-color: var(--color-tertiary); color: var(--color-text-inverse); border: none; padding: var(--spacing-4) var(--spacing-8); border-radius: var(--radius-md); font-family: var(--font-family-primary); font-size: var(--font-size-base); font-weight: var(--font-weight-normal); cursor: pointer; transition: background-color 0.3s ease;">
+          Book Your Trip
+        </button>
+        <button class="btn-secondary" style="background-color: var(--color-secondary); color: var(--color-text-inverse); border: none; padding: var(--spacing-4) var(--spacing-8); border-radius: var(--radius-md); font-family: var(--font-family-primary); font-size: var(--font-size-base); font-weight: var(--font-weight-normal); cursor: pointer; transition: background-color 0.3s ease;">
+          Download Guide
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Map Section -->
+  <section id="contact" style="padding: var(--spacing-20) var(--spacing-8); background-color: var(--color-background);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <h2 style="font-family: var(--font-family-primary); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); text-align: center; margin: 0 0 var(--spacing-6) 0; color: var(--color-text);">
+        Find Us in Mabini
+      </h2>
+      <p style="font-family: var(--font-family-body); font-size: var(--font-size-lg); text-align: center; margin: 0 0 var(--spacing-12) 0; color: var(--color-text-muted); line-height: 1.6;">
+        Located in the heart of Batangas, Mabini is easily accessible by land and offers stunning coastal views and rich marine biodiversity.
+      </p>
+      <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg);">
+        <iframe 
+          title="Mabini, Batangas Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62422.89234567890!2d120.8567890!3d13.7567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd0b1234567890%3A0x1234567890abcdef!2sMabini%2C%20Batangas%2C%20Philippines!5e0!3m2!1sen!2sph!4v1234567890123&key=YOUR_API_KEY"
+          style="width: 100%; height: 400px; border: 0;"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color: var(--color-primary); padding: var(--spacing-16) var(--spacing-8); color: var(--color-text-inverse);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-12); margin-bottom: var(--spacing-12);">
+        <!-- Contact Info -->
+        <div>
+          <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin: 0 0 var(--spacing-6) 0; color: var(--color-text-inverse);">
+            Contact Information
+          </h3>
+          <div style="font-family: var(--font-family-body); font-size: var(--font-size-base); line-height: 1.8; color: var(--color-text-inverse);">
+            <p style="margin: 0 0 var(--spacing-2) 0;">Barangay Anilao, Mabini, Batangas</p>
+            <p style="margin: 0 0 var(--spacing-2) 0;">Philippines 4202</p>
+            <p style="margin: 0 0 var(--spacing-2) 0;">Email: info@mabinitourism.ph</p>
+            <p style="margin: 0;">Phone: +63 43 123 4567</p>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin: 0 0 var(--spacing-6) 0; color: var(--color-text-inverse);">
+            Quick Links
+          </h3>
+          <nav style="display: flex; flex-direction: column; gap: var(--spacing-3);">
+            <a href="#attractions" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-body); font-size: var(--font-size-base); transition: color 0.3s ease;">Attractions</a>
+            <a href="#visit" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-body); font-size: var(--font-size-base); transition: color 0.3s ease;">Plan Your Visit</a>
+            <a href="#contact" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-body); font-size: var(--font-size-base); transition: color 0.3s ease;">Contact</a>
+          </nav>
+        </div>
+        <!-- Social Media -->
+        <div>
+          <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin: 0 0 var(--spacing-6) 0; color: var(--color-text-inverse);">
+            Follow Us
+          </h3>
+          <div style="display: flex; gap: var(--spacing-4);">
+            <a href="#" style="color: var(--color-text-inverse); text-decoration: none; font-size: var(--font-size-2xl); transition: color 0.3s ease;" aria-label="Facebook">📘</a>
+            <a href="#" style="color: var(--color-text-inverse); text-decoration: none; font-size: var(--font-size-2xl); transition: color 0.3s ease;" aria-label="Instagram">📷</a>
+            <a href="#" style="color: var(--color-text-inverse); text-decoration: none; font-size: var(--font-size-2xl); transition: color 0.3s ease;" aria-label="Twitter">🐦</a>
+            <a href="#" style="color: var(--color-text-inverse); text-decoration: none; font-size: var(--font-size-2xl); transition: color 0.3s ease;" aria-label="YouTube">📺</a>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Bottom -->
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: var(--spacing-8); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-4);">
+        <p style="margin: 0; font-family: var(--font-family-body); font-size: var(--font-size-sm); color: var(--color-text-inverse);">
+          © 2024 Mabini Tourism. All rights reserved.
+        </p>
+        <div style="display: flex; gap: var(--spacing-6);">
+          <a href="#" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-body); font-size: var(--font-size-sm); transition: color 0.3s ease;">Privacy Policy</a>
+          <a href="#" style="color: var(--color-text-inverse); text-decoration: none; font-family: var(--font-family-body); font-size: var(--font-size-sm); transition: color 0.3s ease;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('active');
+    }
+
+    // Carousel functionality
+    let currentSlide = 0;
+    const totalSlides = 4;
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const dots = document.querySelectorAll('.carousel-dot');
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+    function previousSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+    function goToSlide(slideIndex) {
+      currentSlide = slideIndex;
+      updateCarousel();
+    }
+    setInterval(nextSlide, 5000);
+
+    // Navigation active state
+    function updateActiveNav() {
+      const sections = ['hero', 'attractions', 'visit', 'contact'];
+      const navLinks = document.querySelectorAll('.nav-link');
+      let currentSection = 'hero';
+      sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = sectionId;
+          }
+        }
+      });
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${currentSection}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav);
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Login/Logout logic
+    const loginBtn = document.getElementById('loginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const loginBtnMobile = document.getElementById('loginBtnMobile');
+    const logoutBtnMobile = document.getElementById('logoutBtnMobile');
+    const loginModalBg = document.getElementById('loginModalBg');
+    const logoutModalBg = document.getElementById('logoutModalBg');
+
+    function showLoginModal() {
+      loginModalBg.classList.add('active');
+      document.getElementById('username').focus();
+    }
+    function closeLoginModal() {
+      loginModalBg.classList.remove('active');
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+    }
+    function showLogoutModal() {
+      logoutModalBg.classList.add('active');
+    }
+    function closeLogoutModal() {
+      logoutModalBg.classList.remove('active');
+    }
+    function login() {
+      // Simple demo: any username/password is accepted
+      closeLoginModal();
+      loginBtn.style.display = "none";
+      logoutBtn.style.display = "inline-block";
+      if (loginBtnMobile) loginBtnMobile.style.display = "none";
+      if (logoutBtnMobile) logoutBtnMobile.style.display = "inline-block";
+      alert("Login successful!");
+    }
+    function confirmLogout() {
+      closeLogoutModal();
+      loginBtn.style.display = "inline-block";
+      logoutBtn.style.display = "none";
+      if (loginBtnMobile) loginBtnMobile.style.display = "inline-block";
+      if (logoutBtnMobile) logoutBtnMobile.style.display = "none";
+      alert("You have been logged out.");
+    }
+
+    // Button event listeners
+    if (loginBtn) loginBtn.onclick = showLoginModal;
+    if (loginBtnMobile) loginBtnMobile.onclick = function() {
+      toggleMobileMenu();
+      showLoginModal();
+    };
+    if (logoutBtn) logoutBtn.onclick = showLogoutModal;
+    if (logoutBtnMobile) logoutBtnMobile.onclick = function() {
+      toggleMobileMenu();
+      showLogoutModal();
+    };
+
+    // Close modal on ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        closeLoginModal();
+        closeLogoutModal();
+      }
+    });
+    // Close modal when clicking outside
+    loginModalBg.addEventListener('click', function(e) {
+      if (e.target === loginModalBg) closeLoginModal();
+    });
+    logoutModalBg.addEventListener('click', function(e) {
+      if (e.target === logoutModalBg) closeLogoutModal();
+    });
+  </script>
+</body>
+</html>
